@@ -27,6 +27,11 @@ Garden Gnome
 - Enable automatic deploys (this is optional)
 - In Resouces tab search for Heroku Postgres and add, this will give you your DATABASE_URL which can be found in the settings section under Config Vars
 
+- create project using Django (this will be called gardengnome) with command django-admin startproject gardengnome .
+
+- create app (this will be called blog) using command python3 manage.py startapp blog
+- add blog to installed apps in settings.py
+- migrate changes using python3 manage.py migrate (you should be able to view the django installed app succes page when runng the server using python3 manage.py runserver)
 
 # Credits
 
