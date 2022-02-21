@@ -1,1 +1,1 @@
-web: gunicorn garden-gnome-blog.wsgi
+web: gunicorn gardengnome.wsgi
