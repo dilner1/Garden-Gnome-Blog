@@ -59,6 +59,9 @@ Garden Gnome
     - in ALLOWED_HOSTS section add the Herolu app name and .herokuapp.com to the key value and localhost - this app's key will be ['garden-gnome-blog.herokuapp.com', 'localhost'] as an example
 - Cretae Media, static and templates folders in the top level of our project on git
 
+- Create a Procfile (must use a capital P) for Heroku to read
+    - add web: gunicorn gardengnome.wsgi to Procfile
+
 
 # Credits
 
