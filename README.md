@@ -29,11 +29,11 @@ Garden Gnome
 - add blog to installed apps in settings.py
 - migrate changes using python3 manage.py migrate (you should be able to view the django installed app succes page when runng the server using python3 manage.py runserver)
 
-
-- Open Heroku account and create new app by clicking 'new'
-- In Deploy tab click connect to Github, find correct repo
-- Enable automatic deploys (this is optional)
-- In Resouces tab search for Heroku Postgres and add, this will give you your DATABASE_URL which can be found in the settings section under Config Vars
+- Go to Heroku.com
+    - Open account and create new app by clicking 'new'
+    - In Deploy tab click connect to Github, search for correct repo
+    - Enable automatic deploys (this is optional)
+    - In Resouces tab search for Heroku Postgres and add, this will give you your DATABASE_URL which can be found in the settings section under Config Vars
 
 - Back in git create create an env.py file, import os and add the postgres DATABASE_URL key 
 - add a SECRET_KEY variable to env.py with a random key, back in Heroku add this to config vars - you will need to put SECRET_KEY in the key section and the random key in the value section, then press add
@@ -44,6 +44,20 @@ Garden Gnome
 - Open Cloudinary account if you do not already have one, on the Dashboard there will be a API Environment Variable, click the copy to clipboard icon in the bottom right hand corner
 - Paste into the env.py file, following the format for the other keys seperate CLOUDINARY_URL as the key nmae, remove the '=' and use the ramaining part as the key value
 - Copy the Cloudinary url key name and value into config vars on Heroku as with the SECRET_KEY
+- Add DISABLE_COLLECTSTATIC to Heroku with the value set as 1 - this is required as there are no static files at present and will be removed later in the project
+
+- In Settings.py connect Cloudinary database
+    - Add cloudinary_storage to INSTALLED_APPS above django.contrib.staticfiles
+    - Add cloudinary to INSTALLED_APPS underneith
+    - under STATIC_URL add these lines
+        - STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+        - STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+        - STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+        - DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    - under Build paths section add TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+    - in TEMPLATES section add TEMPLATES_DIR as the value to the key 'DIRS':
+    - in ALLOWED_HOSTS section add the Herolu app name and .herokuapp.com to the key value and localhost - this app's key will be ['garden-gnome-blog.herokuapp.com', 'localhost'] as an example
+- Cretae Media, static and templates folders in the top level of our project on git
 
 
 # Credits
