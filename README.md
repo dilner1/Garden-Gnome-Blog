@@ -41,6 +41,9 @@ Garden Gnome
 - update SECRET_KEY in settings.py or add it if not already present
 - Go to DATABASES section in setting.py and set default to BATABASE_URL - the database will now be connected correctly with Heroku (this will be adjusted later but for now this will be fine)
 - Migrate with python3 manage.py migrate
+- Open Cloudinary account if you do not already have one, on the Dashboard there will be a API Environment Variable, click the copy to clipboard icon in the bottom right hand corner
+- Paste into the env.py file, following the format for the other keys seperate CLOUDINARY_URL as the key nmae, remove the '=' and use the ramaining part as the key value
+- Copy the Cloudinary url key name and value into config vars on Heroku as with the SECRET_KEY
 
 
 # Credits
