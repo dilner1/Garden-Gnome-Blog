@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Post
 
-# Additional aditional information for Posts in admin dashboard
+# Additional information for Posts in admin dashboard
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'status', 'created_on')
