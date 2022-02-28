@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic, View
 from .models import Post
 
 # Allows published posts to be displayed on html page
