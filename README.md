@@ -3,7 +3,17 @@ Garden Gnome
 
 ## Existing Features
 
+# Admin 
+To access admin the superusers details are
+User: admin
+Email: admin@gmail.com
+Password: adminaccess
+
 ## Features Left to Implement
+
+## Design Stage
+
+
 
 # Testing
 
@@ -64,6 +74,10 @@ Garden Gnome
 
 
 # Credits
+
+Useful websites and tutorials 
+https://djangocentral.com/building-a-blog-application-with-django/
+https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&ab_channel=Codemy.com
 
 ## Content
 
