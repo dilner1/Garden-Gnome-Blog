@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <meta charset="UTF-8">
@@ -22,10 +22,16 @@
     <title>Garden Gnome</title>
 </head>
 
-<body>
-    {% block content %}
-    <!-- page content -->
-    {% endblock %}
+<body class="d-flex flex-column h-100">
+    
+    <main>
+        {% block content %}
+        <!-- page content -->
+        {% endblock %}
+    </main>
+
+    <footer>
+    </footer>
 </body>
 
 </html>
