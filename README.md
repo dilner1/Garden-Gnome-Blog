@@ -84,5 +84,8 @@ https://www.youtube.com/watch?v=qNifU_aQRio&ab_channel=AdrianTwarog
 ## Content
 
 pexels.com
+googlefonts.com
+fontawesome.com
+pexels.com
 
 ## Media
