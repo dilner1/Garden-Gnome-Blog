@@ -18,7 +18,7 @@ body {
 
 .title-image {
     background-image: url("https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646105774/pink_flowers_pskkjx.jpg");
-    height: 70%;
+    height: 10rem;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
