@@ -17,16 +17,8 @@ body {
     text-align: center;
 }
 
-.title-image {
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-height: 30%;
-    background-position: center;
-    background-size: contain;
+.nav {
     position: fixed;
-    object-fit: cover;
-    z-index: -1;
 }
 
 .nav-item {
@@ -38,5 +30,27 @@ body {
     text-align: right;
 }
 
+.img-container {
+    width: 100%;
+    min-height: 30%;
+    /* max-height: 30%; */
+    border: 2px solid red;
+    overflow: hidden;
+}
+
+.image-container {
+}
+
+.title-image {
+
+    width: 100%;
+    max-height: 30%;
+    background-size:contain;
+    position: fixed;
+    object-fit:cover;
+    z-index: -1;
+}
+
 .content {
+
 }
