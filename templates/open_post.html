@@ -10,7 +10,7 @@
                     <h2>{{ post.title }}</h2>
                     <h5>{{ post.author }} | {{ post.created_on}} </h5>
                 </div>
-                <div class="fakeimg" style="height:200px;">Image</div>
+                <div class="post-image">{{ post.image.url }}</div>
 
                 <h3>{{ post.excerpt | safe }}</h3>
 
