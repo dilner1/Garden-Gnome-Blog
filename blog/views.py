@@ -12,3 +12,7 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'open_post.html'
+
+class AddPost(generic.DetailView):
+    model = Post
+    template_name = 'add_post.html'
