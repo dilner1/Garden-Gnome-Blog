@@ -11,8 +11,11 @@
                     <p>{{ post.excerpt | safe }}</p>
                     <h5>{{ post.author }} | {{ post.created_on}} </h5>
                 </div>
-                <div class="post-card-image">{{ post.image.url }}</div>
-
+                {% if 'placeholder' in post.image.url %}
+                <div class="post-card-image image-background"></div>
+                {% else %}
+                <img alt="card-img-top" src="{{ post.image.url }}">
+                {% endif %}
 
                 <p class="card-text">{{post.content | slice:":200" | safe }}</p>
             </div>
