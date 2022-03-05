@@ -11,7 +11,7 @@
                     <p>{{ post.excerpt | safe }}</p>
                     <h5>{{ post.author }} | {{ post.created_on}} </h5>
                 </div>
-                <div class="fakeimg" style="height:200px;">{{ post.image.url }}</div>
+                <div class="post-card-image">{{ post.image.url }}</div>
 
 
                 <p class="card-text">{{post.content | slice:":200" | safe }}</p>
