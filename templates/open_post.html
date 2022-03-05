@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        {% for post in post_list %}
+
         <div class="post-page">
             <div class="card">
                 <div class="post-header">
@@ -17,7 +17,7 @@
                 <p class="card-text">{{post.content | safe }}</p>
             </div>
         </div>
-        {% endfor %}
+
     </div>
 </div>
-{% endblock content %}
+{% endblock %}
