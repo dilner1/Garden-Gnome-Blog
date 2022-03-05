@@ -33,8 +33,6 @@ body {
 .img-container {
     width: 100%;
     min-height: 30%;
-    /* max-height: 30%; */
-    border: 2px solid red;
     overflow: hidden;
 }
 
@@ -53,4 +51,12 @@ body {
 
 .content {
 
+}
+
+.post-card {
+    margin-top: 2rem;
+}
+
+.post-header {
+    text-align: center;
 }
