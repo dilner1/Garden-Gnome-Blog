@@ -5,7 +5,6 @@
     <div class="row">
         {% for post in post_list %}
         <div class="post-page">
-            <a href="{% url 'open_post' post.slug %}" class="post-link"></a>
             <div class="card">
                 <div class="post-header">
                     <h2>{{ post.title }}</h2>
@@ -21,4 +20,4 @@
         {% endfor %}
     </div>
 </div>
-{% endblock %}
+{% endblock content %}
