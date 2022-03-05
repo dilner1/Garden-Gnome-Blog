@@ -11,5 +11,3 @@ class PostAdmin(SummernoteModelAdmin):
     list_filter = ('status', 'created_on')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
-
-# admin.site.register(Post, PostAdmin)
