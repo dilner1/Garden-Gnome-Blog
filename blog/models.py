@@ -11,7 +11,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now= True)
-    # featured_image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField('image', default='https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646105774/pink_flowers_pskkjx.jpg')
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
