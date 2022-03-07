@@ -12,7 +12,7 @@
                     <h5>{{ post.author }} | {{ post.created_on}} </h5>
                 </div>
                 {% if 'placeholder' in post.image.url %}
-                <div class="post-card-image image-background"></div>
+                <div class="post-card-image"></div>
                 {% else %}
                 <img alt="card-img-top" src="{{ post.image.url }}">
                 {% endif %}

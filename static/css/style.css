@@ -36,9 +36,6 @@ body {
     overflow: hidden;
 }
 
-.image-container {
-}
-
 .title-image {
 
     width: 100%;
@@ -55,16 +52,11 @@ body {
 
 .post-card {
     margin-top: 2rem;
-}
-
-.post-header {
+    max-height: 100px;
     text-align: center;
 }
 
 .post-card-image {
-    height: 20rem;
-}
-
-.image-background {
-    background-color: green;
+    background-size:cover;
+    object-fit:contain;
 }
