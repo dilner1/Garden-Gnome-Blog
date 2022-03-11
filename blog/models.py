@@ -28,4 +28,4 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
-        return reverse('slug', args=(str(self.id)))
+        return reverse('home')

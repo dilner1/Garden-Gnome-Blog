@@ -16,4 +16,5 @@ class PostDetail(generic.DetailView):
 class AddPost(generic.CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = ('title', 'slug', 'image', 'content', 'status')
+    # fields = ('title', 'slug', 'author', 'image', 'content', 'status')
+    fields = ('title', 'slug', 'author', 'image', 'content')
