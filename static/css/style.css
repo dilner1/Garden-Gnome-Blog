@@ -58,6 +58,11 @@ body {
 
 .post-card-image {
     background-image: url('https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg');
+    height: 20rem;
     background-size:cover;
     object-fit:contain;
+}
+
+.card-img-top {
+    min-height: 20rem;
 }
