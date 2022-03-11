@@ -46,10 +46,6 @@ body {
     z-index: -1;
 }
 
-.content {
-    text-align: center;
-}
-
 .post-card {
     margin-top: 2rem;
     max-height: 100px;

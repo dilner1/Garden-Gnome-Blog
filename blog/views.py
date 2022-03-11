@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post
+from.forms import PostForm
 
 # Allows published posts to be displayed on html page
 
@@ -15,5 +16,5 @@ class PostDetail(generic.DetailView):
 
 class AddPost(generic.CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'add_post.html'
-    fields = ('title', 'slug', 'author', 'image', 'content', 'status')
