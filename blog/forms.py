@@ -9,6 +9,6 @@ class PostForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'}),
             'slug': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Post Link Name'}),
             'author': forms.Select(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Text'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
         }
