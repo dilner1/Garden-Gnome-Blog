@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 # models provide the basis for our posts
 
@@ -8,7 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, name='slug')
     author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now= True)
     image = CloudinaryField('image', default='placeholder')
@@ -25,3 +26,6 @@ class Post(models.Model):
 
     def like_count(self):
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('slug', args=(str(self.id)))
