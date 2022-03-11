@@ -4,16 +4,17 @@
 <div class="container-fluid">
     <div class="row">
         <div>
-            <h2>Create New Post</h2>
+            <h2>Create Your Post</h2>
         </div>
-
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-
-            <button type="submit" class="btn btn-primary">Complete</button>
-
-        </form>
+        <div class="form-group">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+    
+                <button type="submit" class="btn btn-primary">Complete</button>
+    
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
