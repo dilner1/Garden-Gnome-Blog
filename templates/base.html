@@ -36,17 +36,17 @@
                         <a href="{% url 'home' %}" class="nav-link">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">   
+                    <li class="nav-item">
                         <a href="{% url 'add_post' %}" class="nav-link">Add a Post</a>
                     </li>
-                    <li class="nav-item">   
+                    <li class="nav-item">
                         <a href="{% url 'account_logout' %}" class="nav-link">Log out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a href="{% url 'account_signup' %}" class="nav-link">Register</a>
                     </li>
-                    <li class="nav-item">   
+                    <li class="nav-item">
                         <a href="{% url 'account_login' %}" class="nav-link">Sign in</a>
                     </li>
                     {% endif %}
@@ -54,12 +54,21 @@
             </div>
         </div>
     </nav>
-    <div class="img-container">
-        <div class="image-container"><img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646105774/pink_flowers_pskkjx.jpg"
-            class="title-image" alt="Main Image">
+    {% if request.get_full_path == "/accounts/login/" or request.get_full_path == "/accounts/logout/" or request.get_full_path == "/accounts/signup/" %}
+    <div class="img-container img-container-2">
+        <div class="image-container"><img
+                src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1647029766/i4gm8z1jdusnujofarzv.jpg"
+                class="title-image" alt="Main Image">
         </div>
     </div>
-
+    {% else %}
+    <div class="img-container">
+        <div class="image-container"><img
+                src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646105774/pink_flowers_pskkjx.jpg"
+                class="title-image" alt="Main Image">
+        </div>
+    </div>
+    {% endif %}
     <div class="container-fluid">
         {% block content %}
         <!-- page content -->
