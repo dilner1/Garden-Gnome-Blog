@@ -56,3 +56,7 @@ body {
     height: 20rem;
     object-fit:contain;
 }
+
+.asteriskField {
+    display: none;
+}
