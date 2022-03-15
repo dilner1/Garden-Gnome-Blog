@@ -35,15 +35,21 @@
                     <li class="nav-item">
                         <a href="{% url 'home' %}" class="nav-link">Home</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">   
                         <a href="{% url 'add_post' %}" class="nav-link">Add a Post</a>
                     </li>
+                    <li class="nav-item">   
+                        <a href="{% url 'account_logout' %}" class="nav-link">Log out</a>
+                    </li>
+                    {% else %}
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Register</a>
+                        <a href="{% url 'account_signup' %}" class="nav-link">Register</a>
                     </li>
                     <li class="nav-item">   
-                        <a href="#" class="nav-link">Sign in</a>
+                        <a href="{% url 'account_login' %}" class="nav-link">Sign in</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
