@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
+from django.utils.text import slugify
 from autoslug import AutoSlugField
 
 # models provide the basis for our posts
@@ -34,4 +35,4 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(kwargs.pop('slug', self.slug))
 
-        super(WebPage, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
