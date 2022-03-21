@@ -20,19 +20,23 @@
                 <p class="card-text">{{post.content | safe }}</p>
             </div>
         </div>
-        {% for comment in comments %}
+        <div>
+            <h3>Comments</h3>
+            {% for comment in comments %}
         <div class="comments-section">
-            <h4>
+            <p>
                 {{ comment.name }}
                 <span>
                     {{ comment.created_on }}
                 </span>
-            </h4>
+            </p>
             <p>
             {{ comment.body | linebreaks }}
             </p>
         </div>
         {% endfor %}
+        </div>
+        
     </div>
 </div>
 {% endblock %}
