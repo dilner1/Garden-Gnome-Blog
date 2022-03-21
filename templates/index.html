@@ -14,10 +14,8 @@
                     <h5>{{ post.author }} | {{ post.created_on}} </h5>
                 </div>
                 {% if 'placeholder' in post.image.url %}
-                <div class="post-card-image">
                     <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
-                        class="title-image" alt="Main Image">
-                </div>
+                        class="card-img-top img-responsive fit-image" alt="Main Image">
                 {% else %}
                 <img class="card-img-top img-responsive fit-image" alt="card image" src="{{ post.image.url }}">
                 {% endif %}
