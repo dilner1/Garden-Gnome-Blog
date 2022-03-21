@@ -23,7 +23,10 @@
         </div>
         <div>
             <h3>Comments</h3>
-            {% for comment in comments %}
+            {% if not comment in comments %}
+            <p>No comments yet</p>
+            {% else %}
+            {% for comment in post.comments.all %}
         <div class="comments-section">
             <p>
                 {{ comment.name }}
@@ -36,6 +39,7 @@
             </p>
         </div>
         {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>

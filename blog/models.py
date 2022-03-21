@@ -38,7 +38,7 @@ class Post(models.Model):
         super().save(*args, **kwargs)
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=100)
     email = models.EmailField()
     body = models.TextField()
@@ -49,4 +49,4 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-            return f'Comments {self.body} by {self.name}'
+        return f'Comment {self.body} by {self.name}'
