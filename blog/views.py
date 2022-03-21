@@ -14,6 +14,7 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'open_post.html'
 
+
 class AddPost(generic.CreateView):
     model = Post
     form_class = PostForm

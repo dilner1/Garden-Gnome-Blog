@@ -11,7 +11,7 @@
                 </div>
                 {% if 'placeholder' in post.image.url %}
                 <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
-                        class="card-img-top" alt="Main Image">
+                    class="card-img-top" alt="Main Image">
                 {% else %}
                 <img alt="card-img-top" src="{{ post.image.url }}">
                 {% endif %}
@@ -22,23 +22,25 @@
             </div>
         </div>
         <div>
+            <br>
             <h3>Comments</h3>
             {% if not comment in comments %}
             <p>No comments yet</p>
             {% else %}
-            {% for comment in post.comments.all %}
-        <div class="comments-section">
-            <p>
-                {{ comment.name }}
-                <span>
-                    {{ comment.created_on }}
-                </span>
-            </p>
-            <p>
-            {{ comment.body | linebreaks }}
-            </p>
-        </div>
-        {% endfor %}
+                {% for comment in comments %}
+                <div class="comments-section">
+                    <p>
+                        {{ comment.name }}
+                        <span>
+                            {{ comment.created_on }}
+                        </span>
+                    </p>
+                    <p>
+                        {{ comment.body | linebreaks }}
+                    </p>
+                </div>
+                    <hr>
+                {% endfor %}
             {% endif %}
         </div>
     </div>
