@@ -80,6 +80,7 @@ Comments not showing
 Useful websites and tutorials 
 https://djangocentral.com/building-a-blog-application-with-django/
 https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&ab_channel=Codemy.com
+https://www.samuelliedtke.com/blog/implement-comment-system-blog-application-django/#views
 
 Bootstrap 
 https://www.youtube.com/watch?v=qNifU_aQRio&ab_channel=AdrianTwarog
