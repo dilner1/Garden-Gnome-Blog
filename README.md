@@ -19,6 +19,9 @@ Password: adminaccess
 
 ## Validator Testing
 
+## Development Bugs
+Comments not showing
+
 ## Unfixed Bugs
 
 # Deployment

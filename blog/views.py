@@ -13,6 +13,7 @@ class PostList(generic.ListView):
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
+        template_name = 'open_post.html'
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.filter(approved=True)
         new_comment = None
@@ -27,7 +28,7 @@ class PostDetail(View):
 
             else:
                 comment_form = CommentForm()
-                return render(request, 'open_post.html', 
+                return render(request, self.template_name, 
                 {'post': post,
                 'comments': comments,
                 'new_comment': new_comment,
