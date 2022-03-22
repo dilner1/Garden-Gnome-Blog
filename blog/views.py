@@ -8,24 +8,10 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 8
 
-class PostDetail(View):
-    def get(self, request, slug):
-        template_name = 'open_post.html'
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True)
-        if request.method == 'POST':
-            comment_form = CommentForm(data=request.POST)
-            if comment_form.is_valid():
-                new_comment = comment_form.save(commit=False)
-                new_comment.post = post
-                new_comment.save()
-        else:
-            comment_form = CommentForm()
-
-        return render(request, template_name, {'post': post,
-                                            'comments': comments,
-                                            'comment_form': comment_form})
+class PostDetail(generic.DetailView):
+    model = Post
+    template_name = 'open_post.html'
+        
 class AddPost(generic.CreateView):
     model = Post
     form_class = PostForm
