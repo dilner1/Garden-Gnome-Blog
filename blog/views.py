@@ -11,8 +11,9 @@ class PostList(generic.ListView):
 class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         template_name = 'open_post.html'
-        post = get_object_or_404(Post, slug=slug)
-        comments = post.comments.filter(approved=True)
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('-created_on')
         new_comment = None
         if request.method == 'POST':
             comment_form = CommentForm(data=request.POST)
