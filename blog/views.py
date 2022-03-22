@@ -13,7 +13,7 @@ class PostDetail(View):
         template_name = 'open_post.html'
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=Tr
+        comments = post.comments.filter(approved=True)
         if request.method == 'POST':
             comment_form = CommentForm(data=request.POST)
             if comment_form.is_valid():
