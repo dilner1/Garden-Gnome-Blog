@@ -22,6 +22,8 @@ Password: adminaccess
 ## Development Bugs
 Comments not showing
 
+Heroku not laoding css - believe static files not being located properly however url looks correct.
+
 ## Unfixed Bugs
 
 # Deployment
