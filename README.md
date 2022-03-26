@@ -13,15 +13,13 @@ Password: adminaccess
 
 ## Design Stage
 
-
-
 # Testing
 
 ## Validator Testing
 
 ## Development Bugs
-- Link to Edit post breaking open_post.html - error Reverse for 'edit_post' with no arguments not found.
-- URL in this order update/<slug:slug>
+- Link to Edit post breaking open_post.html - error = Reverse for 'edit_post' with no arguments not found.
+- In urls.py in this order update/<slug:slug>
 - Add post:slug to end of url link in open_post.html so it looks like {% url 'edit_post' post.slug%}
 
 Comments not showing

@@ -7,11 +7,11 @@
             <div class="card">
                 <div class="post-header">
                     <h2>{{ post.title }}</h2>
-                    <h5>{{ post.author }} | {{ post.created_on}} </h5>
+                    <h5>{{ post.author }} | {{ post.created_on}} 
+                            <a href="{% url 'edit_post' post.slug%}" class="nav-link">Edit Post</a>
+                    </h5>
+                        
                 </div>
-                <li class="nav-item">
-                    <a href="{% url 'edit_post' post.slug%}" class="nav-link">Edit</a>
-                </li>
                 {% if 'placeholder' in post.image.url %}
                 <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
                     class="card-img-top" alt="Main Image">
