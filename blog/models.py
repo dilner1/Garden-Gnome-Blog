@@ -34,7 +34,6 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(kwargs.pop('slug', self.slug))
-
         super().save(*args, **kwargs)
 
 class Comment(models.Model):

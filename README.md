@@ -20,6 +20,10 @@ Password: adminaccess
 ## Validator Testing
 
 ## Development Bugs
+- Link to Edit post breaking open_post.html - error Reverse for 'edit_post' with no arguments not found.
+- URL in this order update/<slug:slug>
+- Add post:slug to end of url link in open_post.html so it looks like {% url 'edit_post' post.slug%}
+
 Comments not showing
 
 Heroku not laoding css - believe static files not being located properly however url looks correct.
@@ -83,6 +87,7 @@ Useful websites and tutorials
 https://djangocentral.com/building-a-blog-application-with-django/
 https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&ab_channel=Codemy.com
 https://www.samuelliedtke.com/blog/implement-comment-system-blog-application-django/#views
+https://vegibit.com/slug-based-routing-in-django/
 
 Bootstrap 
 https://www.youtube.com/watch?v=qNifU_aQRio&ab_channel=AdrianTwarog
