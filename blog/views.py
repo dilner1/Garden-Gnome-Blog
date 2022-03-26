@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post
 from .forms import PostForm, CommentForm
+from django.urls import reverse_lazy
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -37,3 +38,8 @@ class UpdateView(generic.UpdateView):
     form_class = PostForm
     template_name = 'edit_post.html'
     field = ['title', 'image', 'content', 'status']
+
+class DeleteView(generic.DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')

@@ -11,6 +11,11 @@ body {
     width: 100%;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
 #title {
     font-family: Amatic SC, Arial, Helvetica, sans-serif;
     font-size: 2rem;
