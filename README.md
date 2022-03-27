@@ -22,6 +22,11 @@ Password: adminaccess
 - In urls.py in this order update/<slug:slug>
 - Add post:slug to end of url link in open_post.html so it looks like {% url 'edit_post' post.slug%}
 
+- on sign in user is registered but error appears ConnectionRefusedError at /accounts/signup/
+[Errno 111] Connection refused
+- Issue not clear but stack overflow suggests there is an error trying to send an email
+- Setting dummy email backend in settings removes issue and directs user back to main page as it should
+
 Comments not showing
 
 Heroku not laoding css - believe static files not being located properly however url looks correct.
