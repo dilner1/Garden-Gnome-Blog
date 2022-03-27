@@ -13,6 +13,12 @@
                 {{ form|crispy }}
     
                 <button type="submit" class="btn btn-primary">Complete</button>
+
+                <script>
+                    let name = "{{ user.id }}";
+                    document.getElementById("formAuth").value
+                        = name;
+                </script>
             </form>
         </div>
     </div>
