@@ -7,10 +7,14 @@
             <div class="card">
                 <div class="post-header">
                     <h2>{{ post.title }}</h2>
-                    <h5>{{ post.author }} | {{ post.created_on}} 
+                    <h5>{{ post.author }} | {{ post.created_on}}
+                        {% if user.is_authenticated %}
+                            {% if user.id == post.author.id %}
                             <a href="{% url 'edit_post' post.slug%}" class="nav-link">Edit Post</a>
+                            {% endif %}
+                        {% endif %}
                     </h5>
-                        
+
                 </div>
                 {% if 'placeholder' in post.image.url %}
                 <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
@@ -30,20 +34,20 @@
             {% if not comment in comments %}
             <p>No comments yet</p>
             {% else %}
-                {% for comment in comments %}
-                <div class="comments-section">
-                    <p>
-                        {{ comment.name }}
-                        <span>
-                            {{ comment.created_on|timesince}} ago
-                        </span>
-                    </p>
-                    <p>
-                        {{ comment.body | linebreaks }}
-                    </p>
-                </div>
-                    <hr>
-                {% endfor %}
+            {% for comment in comments %}
+            <div class="comments-section">
+                <p>
+                    {{ comment.name }}
+                    <span>
+                        {{ comment.created_on|timesince}} ago
+                    </span>
+                </p>
+                <p>
+                    {{ comment.body | linebreaks }}
+                </p>
+            </div>
+            <hr>
+            {% endfor %}
             {% endif %}
         </div>
     </div>
