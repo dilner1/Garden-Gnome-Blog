@@ -61,6 +61,13 @@
                 class="title-image" alt="Main Image">
         </div>
     </div>
+    {% elif request.get_full_path == "/add_post/"%}
+    <div class="img-container">
+        <div class="image-container add-post-image"><img
+                src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1648398197/growing2_jwnlvn.jpg"
+                class="title-image" alt="Main Image">
+        </div>
+    </div>
     {% else %}
     <div class="img-container">
         <div class="image-container"><img
