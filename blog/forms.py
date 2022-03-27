@@ -7,11 +7,12 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'slug', 'author', 'image', 'content', 'status')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Post Link Name'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control',}),
             'author': forms.Select(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Text'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
         }
+        exclude = ('slug',)
 
 class CommentForm(forms.ModelForm):
     class Meta:
