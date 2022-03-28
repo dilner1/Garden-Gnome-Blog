@@ -15,6 +15,10 @@
                 <strong>Are you sure you want to delete {{ post.title }}?</strong>
                 
                 <button type="submit" class="btn btn-primary">Delete</button>
+                <script>
+                    let username = "{{ user.id }}";
+                    document.getElementById("formAuth").value = username;
+                </script>
             </form>
         </div>
     </div>
@@ -29,5 +33,4 @@
 <h2 class="wrong-user">Oops, looks like you are the wrong user. Please sign in.</h2>
 </div>
 {% endif %}
-{% endblock %}
 {% endblock %}
