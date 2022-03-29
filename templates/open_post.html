@@ -25,10 +25,15 @@
 
                 <h3>{{ post.excerpt | safe }}</h3>
 
-                <p class="card-text">{{post.content | safe }}</p>
+                <p class="card-text">{{ post.content | safe }}</p>
             </div>
         </div>
         <div>
+            {% if post.likes.count == 1%}
+                <p>{{ post.likes.count }} like</p>
+            {% else %}
+                <p>{{ post.likes.count }} likes</p>
+            {% endif %}
             <form method="POST" action="{% url 'like_post' post.slug %">
                 {% csrf_token %}
                 <button type="submit", name="post_like_btn", value="{{ post.id }}", class="btn btn-primary">Like</button>

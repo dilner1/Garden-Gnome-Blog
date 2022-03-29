@@ -46,7 +46,11 @@ class DeleteView(generic.DeleteView):
     success_url = reverse_lazy('home')
 
 class LikeView(View):
-    def LikeView(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, id=request.Post.get('post_like_btn'))
-        post.likes.add(request.user)
-        return HttpResponseRedirect(reverse('open_post', kwargs=[str(slug)]))
+    def post(self, request, slug):
+        post = get_object_or_404(Post(Post, slug=slug))
+        
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+        return HttpResponseRedirect(reverse('open_post', args=[slug]))
