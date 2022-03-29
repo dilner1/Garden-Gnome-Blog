@@ -29,6 +29,12 @@
             </div>
         </div>
         <div>
+            <form method="POST" action="{% url 'like_post' post.slug %">
+                {% csrf_token %}
+                <button type="submit", name="post_like_btn", value="{{ post.id }}", class="btn btn-primary">Like</button>
+            </form>
+        </div>
+        <div>
             <br>
             <h3>Comments</h3>
             {% if not comment in comments %}
