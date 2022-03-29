@@ -29,10 +29,10 @@
             </div>
         </div>
         <div>
-            {% if post.likes.count == 1%}
-                <p>{{ post.likes.count }} like</p>
+            {% if post.like_count == 1 %}
+                <p>{{ post.like_count }} like</p>
             {% else %}
-                <p>{{ post.likes.count }} likes</p>
+                <p>{{ post.like_count }} likes</p>
             {% endif %}
             <form method="POST" action="{% url 'like_post' post.slug %">
                 {% csrf_token %}
