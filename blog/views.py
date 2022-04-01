@@ -25,11 +25,10 @@ class PostDetail(View):
                 new_comment.post = post
                 new_comment.save()
         else:
-            comment_form = CommentForm()
-        return render(request, template_name,{'post':post,
-        'comments':comments,
-        'new_comment': new_comment,
-        'comment_form': comment_form}) 
+            return render(request, template_name,{'post':post,
+            'comments':comments,
+            'new_comment': new_comment,
+            'comment_form': CommentForm()},) 
 
         
 class AddPost(generic.CreateView):

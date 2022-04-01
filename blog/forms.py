@@ -15,6 +15,7 @@ class PostForm(forms.ModelForm):
         exclude = ('slug',)
 
 class CommentForm(forms.ModelForm):
+    fields = forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your comment'}),
     class Meta:
         model = Comment
-        fields = ('name', 'email', 'body',)
+        fields = ('body',)

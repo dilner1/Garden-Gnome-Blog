@@ -73,7 +73,7 @@
         </div>
         {% else %}
         <h3>Leave a comment</h3>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data" >
             {% csrf_token %}
             {{ form|crispy }}
           <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
