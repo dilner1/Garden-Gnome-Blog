@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container-fluid">
@@ -34,13 +36,19 @@
             {% else %}
                 <p>{{ post.like_count }} likes</p>
             {% endif %}
+            {% if user.is_authenticated %}
             <form method="POST" action="{% url 'like_post' post.slug %">
                 {% csrf_token %}
-                <button type="submit", name="post_like_btn", value="{{ post.id }}", class="btn btn-primary">Like</button>
+                {% if post.liked %}
+                <button type="submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-secondary">Unlike</button>
+                {% else %}
+                <button type="submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-primary">Like</button>
+                {% endif %}
             </form>
+            {% endif %}
         </div>
         <div>
-            <br>
+            <br/>
             <h3>Comments</h3>
             {% if not comment in comments %}
             <p>No comments yet</p>
@@ -57,9 +65,21 @@
                     {{ comment.body | linebreaks }}
                 </p>
             </div>
-            <hr>
             {% endfor %}
             {% endif %}
+        {% if new_comment %}
+        <div class="alert alert-success" role="alert">
+          Your comment is awaiting moderation
+        </div>
+        {% else %}
+        <h3>Leave a comment</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+        {% endif %}
+            <hr>
         </div>
     </div>
 </div>

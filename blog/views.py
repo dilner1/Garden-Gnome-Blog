@@ -17,17 +17,20 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('-created_on')
         new_comment = None
+
         if request.method == 'POST':
             comment_form = CommentForm(data=request.POST)
             if comment_form.is_valid():
                 new_comment = comment_form.save(commit=False)
-                new_comment.post = postnew_comment.save()
+                new_comment.post = post
+                new_comment.save()
         else:
             comment_form = CommentForm()
         return render(request, template_name,{'post':post,
         'comments':comments,
         'new_comment': new_comment,
         'comment_form': comment_form}) 
+
         
 class AddPost(generic.CreateView):
     model = Post
@@ -46,8 +49,7 @@ class DeleteView(generic.DeleteView):
     success_url = reverse_lazy('home')
 
 class LikeView(View):
-    
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
