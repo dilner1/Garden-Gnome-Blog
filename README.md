@@ -32,6 +32,11 @@ Comments not showing
 - Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead
 - Changed comment count display comments count
 
+Comment form not working
+- Comment submit button shows but no fields, on submit the url breaks
+- changed { form|crispy } to {comment_form|crispy} which shows shows the comment field
+-
+
 Heroku not laoding css - believe static files not being located properly however url looks correct.
 
 ## Unfixed Bugs
