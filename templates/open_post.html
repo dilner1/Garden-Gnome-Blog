@@ -50,7 +50,6 @@
         <div>
             <br/>
             <h3>Comments</h3>
-            
             {% for comment in comments %}
             <div class="comments-section">
                 <p>
@@ -63,7 +62,11 @@
                     {{ comment.body | linebreaks }}
                 </p>
             </div>
+                
             {% endfor %}
+            {% if not comment in comments %}
+                <p>No comments yet</p>
+            {% endif %}
             
         {% if new_comment %}
         <div class="alert alert-success" role="alert">
