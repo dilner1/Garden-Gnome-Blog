@@ -20,7 +20,7 @@ Password: adminaccess
 ## Development Bugs
 - Link to Edit post breaking open_post.html - error = Reverse for 'edit_post' with no arguments not found.
 - In urls.py in this order update/<slug:slug>
-- Add post:slug to end of url link in open_post.html so it looks like {% url 'edit_post' post.slug%}
+- Added post:slug to end of url link in open_post.html like this {% url 'edit_post' post.slug%}
 
 - on sign in user is registered but error appears ConnectionRefusedError at /accounts/signup/
 [Errno 111] Connection refused
@@ -28,6 +28,9 @@ Password: adminaccess
 - Setting dummy email backend in settings removes issue and directs user back to main page as it should
 
 Comments not showing
+- Comments not showing even tho they appear in admin panel and approved
+- Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead
+- Changed comment count display comments count
 
 Heroku not laoding css - believe static files not being located properly however url looks correct.
 
