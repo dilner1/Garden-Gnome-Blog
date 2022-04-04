@@ -18,7 +18,6 @@ class PostDetail(View):
         comments = post.comments.filter(approved=True).order_by('-created_on')
         new_comment = None
         
-
         if request.method == 'POST':
             comment_form = CommentForm(data=request.POST)
             if comment_form.is_valid():
@@ -26,12 +25,12 @@ class PostDetail(View):
                 new_comment.post = post
                 new_comment.save()
         else:
+            comment_form = CommentForm()
             return render(request, template_name,{'post':post,
             'comments':comments,
             'new_comment': new_comment,
-            'comment_form': CommentForm()},) 
+            'comment_form': comment_form}) 
 
-        
 class AddPost(generic.CreateView):
     model = Post
     form_class = PostForm
