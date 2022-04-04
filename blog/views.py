@@ -22,6 +22,7 @@ class PostDetail(View):
             comment_form = CommentForm(data=request.POST)
             if comment_form.is_valid():
                 new_comment = comment_form.save(commit=False)
+                print(new_comment)
                 new_comment.post = post
                 new_comment.save()
         else:
@@ -29,7 +30,10 @@ class PostDetail(View):
             return render(request, template_name,{'post':post,
             'comments':comments,
             'new_comment': new_comment,
-            'comment_form': comment_form}) 
+            'comment_form': comment_form})
+    
+    def post(self, request, slug):
+        print('Hello World')
 
 class AddPost(generic.CreateView):
     model = Post
@@ -50,6 +54,7 @@ class DeleteView(generic.DeleteView):
 class LikeView(View):
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
+        print(request)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:

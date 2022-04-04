@@ -37,7 +37,7 @@
             <p>{{ post.like_count }} likes</p>
             {% endif %}
             {% if user.is_authenticated %}
-            <form method="POST" action="{% url 'like_post' post.slug %">
+            <form method="POST" action="{% url 'like_post' post.slug %}">
                 {% csrf_token %}
                 {% if post.liked %}
                 <button type=" submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-secondary">
