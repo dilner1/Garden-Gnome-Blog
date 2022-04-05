@@ -41,7 +41,7 @@
                 {% csrf_token %}
                 {% if is_liked %}
                 <button type=" submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-warning">
-                Unlike</button>
+                Unlike!</button>
                 {% else %}
                 <button type="submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-primary">Like</button>
                 {% endif %}
