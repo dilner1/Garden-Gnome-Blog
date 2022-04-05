@@ -17,12 +17,19 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('-created_on')
         new_comment = None
+
+        is_liked = False
+        if post.likes.filter(id=request.user.id).exists():
+            is_liked = True
+        return render(request, 'open_post.html', {'post': post, 'is_liked': is_liked, })
         
         if request.method == 'POST':
             comment_form = CommentForm(data=request.POST)
             if comment_form.is_valid():
                 new_comment = comment_form.save(commit=False)
+
                 print(new_comment)
+                
                 new_comment.post = post
                 new_comment.save()
         else:
@@ -54,10 +61,16 @@ class DeleteView(generic.DeleteView):
 class LikeView(View):
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
-        print(request)
+        is_liked = False
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
+            is_liked = False
         else:
             post.likes.add(request.user)
+            is_liked = True
+        context = {
+            'post':post,
+            'is_liked':is_liked,
+        }
 
         return HttpResponseRedirect(reverse('open_post', args=[slug]))

@@ -39,8 +39,8 @@
             {% if user.is_authenticated %}
             <form method="POST" action="{% url 'like_post' post.slug %}">
                 {% csrf_token %}
-                {% if post.liked %}
-                <button type=" submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-secondary">
+                {% if is_liked %}
+                <button type=" submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-warning">
                 Unlike</button>
                 {% else %}
                 <button type="submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-primary">Like</button>
