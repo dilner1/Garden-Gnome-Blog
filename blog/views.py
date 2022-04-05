@@ -40,9 +40,33 @@ class PostDetail(View):
             'comment_form': comment_form,
             'is_liked': is_liked})
 
-    
-    def post(self, request, slug):
-        print('Hello World')
+    def post(self, request, slug, *args, **kwargs):
+        template_name = 'open_post.html'
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('-created_on')
+        new_comment = None
+        is_liked = False
+        
+        if post.likes.filter(id=request.user.id).exists():
+            is_liked = True
+            
+        if request.method == 'POST':
+            comment_form = CommentForm(data=request.POST)
+            if comment_form.is_valid():
+                comment_form.instance.email = request.user.email
+                comment_form.instance.name = request.user.username
+                new_comment = comment_form.save(commit=False)
+                
+                new_comment.post = post
+                new_comment.save()
+        else:
+            comment_form = CommentForm()
+            return render(request, template_name,{'post':post,
+            'comments':comments,
+            'new_comment': new_comment,
+            'comment_form': comment_form,
+            'is_liked': is_liked})
 
 class AddPost(generic.CreateView):
     model = Post
