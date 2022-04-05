@@ -17,11 +17,11 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('-created_on')
         new_comment = None
-
         is_liked = False
+        
         if post.likes.filter(id=request.user.id).exists():
             is_liked = True
-        return render(request, 'open_post.html', {'post': post, 'is_liked': is_liked, })
+            
         
         if request.method == 'POST':
             comment_form = CommentForm(data=request.POST)
@@ -37,7 +37,9 @@ class PostDetail(View):
             return render(request, template_name,{'post':post,
             'comments':comments,
             'new_comment': new_comment,
-            'comment_form': comment_form})
+            'comment_form': comment_form,
+            'is_liked': is_liked})
+
     
     def post(self, request, slug):
         print('Hello World')
