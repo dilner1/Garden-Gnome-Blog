@@ -4,6 +4,7 @@ from .models import Post
 from .forms import PostForm, CommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -101,6 +102,9 @@ class LikeView(View):
         return HttpResponseRedirect(reverse('open_post', args=[slug]))
 
 class ProfilePage(generic.ListView):
-        model = Post
-        queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'profile_page.html'
+    model = Post
+    context_object_name = 'posts'
+    template_name = 'profile_page.html'
+    def get(self, *args, **kwargs):
+        user = get_object_or_404(User,username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user)
