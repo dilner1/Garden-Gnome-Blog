@@ -100,7 +100,7 @@ class LikeView(View):
 
         return HttpResponseRedirect(reverse('open_post', args=[slug]))
 
-class ProfilePage(generic.DetailView):
-    model = Post
-    form_class = PostForm
-    template_name = 'profile_page.html'
+class ProfilePage(generic.ListView):
+        model = Post
+        queryset = Post.objects.filter(status=1).order_by('-created_on')
+        template_name = 'profile_page.html'
