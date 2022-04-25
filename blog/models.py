@@ -9,6 +9,14 @@ from autoslug import AutoSlugField
 
 STATUS = ((0, "Draft"), (1, "Publish"))
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, null = True, on_delete= models.CASCADE)
+    bio = models.TextField()
+    profilePic = CloudinaryField('image', default='placeholder')
+
+    def __str__(self):
+        return str(self.user)
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = AutoSlugField(populate_from='title', max_length=200, unique=True, name='slug', editable=True)
