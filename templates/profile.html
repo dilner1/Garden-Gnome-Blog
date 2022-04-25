@@ -3,29 +3,67 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h3 class="text-center"> {{ user }}'s profile</h3>
-<div class="container-fluid">
-    <div class="row col-md-6 col-lg-6 col-6">
-        {% for post in post_list %}
-        <div class="col-md-6 col-lg-4 post-card">
-            <div class="card">
-                <div class="post-header">
-                    <a href="{% url 'open_post' post.slug  %}" class="btn">
-                        <h2>{{ post.title }}</h2>
-                    </a>
-                    <p>{{ post.excerpt | safe }}</p>
-                    <h5>{{ post.author }} | {{ post.created_on}} </h5>
-                </div>
-                {% if 'placeholder' in post.image.url %}
-                    <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
-                        class="card-img-top" alt="Main Image">
-                {% else %}
-                <img class="card-img-top img-responsive fit-image" alt="card image" src="{{ post.image.url }}">
-                {% endif %}
 
-                <p class="card-text">{{post.content | slice:":200" | safe }}</p>
-            </div>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Posts</h4>
         </div>
+        <div class="card-body">
+            {% for post in post_list %}
+            {% if post.author == user  %}
+            <div class="post-card">
+                <div class="card">
+                    <div class="post-header">
+                        <a href="{% url 'open_post' post.slug  %}" class="btn">
+                            <h2>{{ post.title }}</h2>
+                        </a>
+                        <p>{{ post.excerpt | safe }}</p>
+                        <h5>{{ post.author }} | {{ post.created_on}} </h5>
+                    </div>
+                    {% if 'placeholder' in post.image.url %}
+                        <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
+                            class="card-img-top" alt="Main Image">
+                    {% else %}
+                    <img class="card-img-top img-responsive fit-image" alt="card image" src="{{ post.image.url }}">
+                    {% endif %}
+    	
+                    <p class="card-text">{{post.content | slice:":200" | safe }}</p>
+                </div>
+            </div>
+            {% endif %}
         {% endfor %}
-</div>
-{% endblock %}
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Likes</h4>
+        </div>
+        <div class="card-body">
+            {% for post in post_list %}
+                {% if user.blogpost_like %}
+                    <li>
+                        <ul>
+                            {{ post.title }}
+                        </ul>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-white bg-primary border-primary">
+          <h4 class="my-0 fw-normal">Comments</h4>
+        </div>
+        <div class="card-body">
+            
+      </div>
+    </div>
+  </div>
+
+            {% endblock %}
