@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Profile
+from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 # Additional information for Posts in admin dashboard
@@ -22,5 +22,3 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
-
-admin.site.register(Profile)
