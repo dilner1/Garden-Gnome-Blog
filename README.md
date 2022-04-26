@@ -13,6 +13,16 @@ Password: adminaccess
 
 ## Design Stage
 
+UX
+1. Focus on the user
+2. Consistency
+3. Hierarchy
+4. Context is key
+5. Put the user in control
+6. Accessibility
+7. Usability testing
+
+
 # Testing
 
 ## Validator Testing
@@ -55,6 +65,7 @@ Comment form not working
 Heroku not laoding css - believe static files not being located properly however url looks correct.
 
 ## Unfixed Bugs
+
 
 # Deployment
 - Create git repository from Code institute template
