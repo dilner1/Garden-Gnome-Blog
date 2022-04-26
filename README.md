@@ -17,6 +17,21 @@ Password: adminaccess
 
 ## Validator Testing
 
+![CSS validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972090/css_validator_index_rc6glx.png "CSS validator")
+
+![HTML validator]( "CSS validator")
+
+![HTML index validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972457/HTML_Index_Validator_lbitjw.png "HMTL index validator")
+
+![HTML add post validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972461/HTML_Add_Post_Validation_mozpd7.png "HTML index validator")
+
+ERROR
+![HTML Profile validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972605/HTML_Profile_Validator_sddejl.png "HTML profile validator")
+
+![HTML Logout validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972715/HTML_logout_Validator_cmtgge.png "HTML logout validator")
+
+![HTML Login validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650973140/HTML_Login_Validation_gozobo.png "HTML login validator")
+
 ## Development Bugs
 - Link to Edit post breaking open_post.html - error = Reverse for 'edit_post' with no arguments not found.
 - In urls.py in this order update/<slug:slug>
