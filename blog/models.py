@@ -5,8 +5,6 @@ from django.urls import reverse
 from django.utils.text import slugify
 from autoslug import AutoSlugField
 
-# models provide the basis for our posts
-
 STATUS = ((0, "Draft"), (1, "Publish"))
 
 class Post(models.Model):

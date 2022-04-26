@@ -8,7 +8,7 @@
     <div class="col">
       <div class="card mb-4 rounded-3 shadow-sm">
         <div class="card-header py-3">
-          <h4 class="my-0 fw-normal">Posts</h4>
+          <h4 class="my-0 fw-normal">My Posts</h4>
         </div>
         <div class="card-body">
             {% for post in post_list %}
@@ -43,15 +43,11 @@
           <h4 class="my-0 fw-normal">Likes</h4>
         </div>
         <div class="card-body">
-            {% for post in post_list %}
-                {% if user.blogpost_like %}
-                    <li>
-                        <ul>
-                            {{ post.title }}
-                        </ul>
-                    </li>
-                {% endif %}
-            {% endfor %}
+
+                <li>
+                    <ul>list of likes</ul>
+                </li>
+
         </div>
       </div>
     </div>
@@ -61,7 +57,14 @@
           <h4 class="my-0 fw-normal">Comments</h4>
         </div>
         <div class="card-body">
+
+            <div class="card-body">
             
+                <li>
+                    <ul>list of comments</ul>
+                </li>
+
+        </div>
       </div>
     </div>
   </div>
