@@ -43,7 +43,7 @@
                 <button type=" submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-warning">
                 Unlike!</button>
                 {% else %}
-                <button type="submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-primary">Like</button>
+                <button type="submit" name="post_like_btn" value="{{post.slug}}" class="btn btn-secondary">Like</button>
                 {% endif %}
             </form>
             {% endif %}
@@ -87,7 +87,7 @@
                             <form action="" method="POST" class="add-comment-form">
                                 {% csrf_token %}
                                 {{ comment_form|crispy }}
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
                 {% else %}
                 <div class="container-fluid">
                     <div class="row col-md-6">
