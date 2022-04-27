@@ -3,6 +3,20 @@ Garden Gnome
 
 ## Existing Features
 
+Home Page
+![home page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089716/home_page_yeuxuk.png "home page image")
+
+Signup Page
+![signup page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089715/signup_page_vmy9hr.png "signup page image")
+
+Signin Page
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089708/signin_page_dy2mpv.png "signin page image")
+
+ Page
+![ page](" page image")
+
+ Page
+![ page](" page image")
 # Admin 
 To access admin the superusers details are
 User: admin
@@ -27,16 +41,17 @@ UX
 
 ## Validator Testing
 
+CSS validator
 ![CSS validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972090/css_validator_index_rc6glx.png "CSS validator")
 
-![HTML validator]( "CSS validator")
-
+HTML index page validator
 ![HTML index validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972457/HTML_Index_Validator_lbitjw.png "HMTL index validator")
 
+HTML add post page validator
 ![HTML add post validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972461/HTML_Add_Post_Validation_mozpd7.png "HTML index validator")
 
-ERROR
-![HTML Profile validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972605/HTML_Profile_Validator_sddejl.png "HTML profile validator")
+HTML Profile validator
+![HTML Profile validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651090456/HTML_Profile_Validator_bdyshi.png "HTML profile validator")
 
 ![HTML Logout validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972715/HTML_logout_Validator_cmtgge.png "HTML logout validator")
 
@@ -60,12 +75,16 @@ Comments not showing
 Comment form not working
 - Comment submit button shows but no fields, on submit the url breaks
 - changed { form|crispy } to {comment_form|crispy} which shows shows the comment field
--
+- Form now submitting correctly
 
-Heroku not laoding css - believe static files not being located properly however url looks correct.
+- Heroku not loading css, files are referrenced correctly in HTML locally. This must be an issue with heroku interpeting the location of css files
+- Most answers on Stack Overflow static files not being located properly.
+- Removed CollectStatic from Heroku and changed Debug from True to False.
 
-## Unfixed Bugs
+# Unfixed Bugs
 
+## Navigation bar
+- Sticky navbar works for only a portion of the time, after a certain distance down the page it can be scrolled out of site.
 
 # Deployment
 - Create git repository from Code institute template
