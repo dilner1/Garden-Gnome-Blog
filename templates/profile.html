@@ -4,54 +4,56 @@
 
 {% block content %}
 
-  <nav class="navbar-expand navbar-light">
-    <div class="container-fluid">
-            <ul class="navbar navbar-nav justify-content-center">
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                  <a href="{% url 'account_email' %}" class="nav-link text-center">Change my Email</a>
-                </li>
-                <li class="nav-item">
-                  <a href="{% url 'account_set_password' %}" class="nav-link text-center">Change my Password</a>
-                </li>
-                {% endif %}
-            </ul>
-    </div>
-  </nav>
+<nav class="navbar-expand navbar-light">
+  <div class="container-fluid">
+    <ul class="navbar navbar-nav justify-content-center">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a href="{% url 'account_email' %}" class="nav-link text-center">Change my Email</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'account_set_password' %}" class="nav-link text-center">Change my Password</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
 
 <div class="row row-cols-1 row-cols-md-1 mb-3 text-center profile-posts">
-    <div class="col">
-      <div class="card mb-4 rounded-3 shadow-sm">
-        <div class="card-header py-3">
-          <h4 class="my-0 fw-normal">My Posts</h4>
-        </div>
-        <div class="container-fluid">
-          <div class="row">
-              {% for post in post_list %}
-              <div class="col-md-6 col-lg-4 post-card">
-                  <div class="card">
-                      <div class="post-header">
-                          <a href="{% url 'open_post' post.slug  %}" class="btn">
-                              <h2>{{ post.title }}</h2>
-                          </a>
-                          <p>{{ post.excerpt | safe }}</p>
-                          <h5>{{ post.author }} | {{ post.created_on}} </h5>
-                      </div>
-                      {% if 'placeholder' in post.image.url %}
-                          <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
-                              class="card-img-top" alt="Main Image">
-                      {% else %}
-                      <img class="card-img-top img-responsive fit-image" alt="card image" src="{{ post.image.url }}">
-                      {% endif %}
-      
-                      <p class="card-text">{{post.content | slice:":200" | safe }}</p>
-                  </div>
-              </div>
-              {% endfor %}
-          </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">My Posts</h4>
       </div>
+      <div class="container-fluid">
+        <div class="row">
+          {% for post in post_list %}
+            {% if post.author == user  %}
+            <div class="col-md-6 col-lg-4 post-card">
+              <div class="card">
+                <div class="post-header">
+                  <a href="{% url 'open_post' post.slug  %}" class="btn">
+                    <h2>{{ post.title }}</h2>
+                  </a>
+                  <p>{{ post.excerpt | safe }}</p>
+                  <h5>{{ post.author }} | {{ post.created_on}} </h5>
+                </div>
+                {% if 'placeholder' in post.image.url %}
+                <img src="https://res.cloudinary.com/ddxxrzq7g/image/upload/v1646643217/default-image_uaijua.jpg"
+                  class="card-img-top" alt="Main Image">
+                {% else %}
+                <img class="card-img-top img-responsive fit-image" alt="card image" src="{{ post.image.url }}">
+                {% endif %}
+
+                <p class="card-text">{{post.content | slice:":200" | safe }}</p>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
+</div>
 
 {% endblock %}
