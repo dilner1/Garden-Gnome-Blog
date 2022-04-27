@@ -131,6 +131,9 @@ https://www.youtube.com/watch?v=qNifU_aQRio&ab_channel=AdrianTwarog
 https://getbootstrap.com/docs/5.0/examples/pricing/
 https://getbootstrap.com/
 
+Django All Auth
+https://django-allauth.readthedocs.io/en/latest/installation.html
+
 ## Content
 
 pexels.com

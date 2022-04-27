@@ -3,17 +3,20 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-<div>
-  <ul>
-      <li class="nav-item">
-        <a href="{% url 'account_email' %}" class="nav-link">Change my Email</a>
-      </li>
-      <li class="nav-item">
-        <a href="{% url 'account_set_password' %}" class="nav-link">Change my Password</a>
-      </li>
-  </ul>
-</div>
+  <nav class="navbar-expand navbar-light">
+    <div class="container-fluid">
+            <ul class="navbar-nav justify-content-center">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a href="{% url 'account_email' %}" class="nav-link text-center">Change my Email</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'account_set_password' %}" class="nav-link text-center">Change my Password</a>
+                </li>
+                {% endif %}
+            </ul>
+    </div>
+  </nav>
 
 <div class="row row-cols-1 row-cols-md-1 mb-3 text-center profile-posts">
     <div class="col">
