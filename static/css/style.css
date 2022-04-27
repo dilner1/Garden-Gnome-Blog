@@ -85,14 +85,6 @@ a {
         justify-content:center;
 }
 
-.red-box {
-    height: 100vh;
-    width: 100vw;
-    background-color: red;
-}
-
-.blue-box {
-    height: 100vh;
-    width: 100vw;
-    background-color: blue;
+.profile-posts {
+    margin-top: 1rem;
 }
