@@ -18,7 +18,7 @@ class PostForm(forms.ModelForm):
                 'placeholder': 'Your Text'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
         }
-        exclude = ('slug',)
+        exclude = ('slug', 'status')
 
 
 class CommentForm(forms.ModelForm):

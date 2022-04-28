@@ -13,7 +13,7 @@
             <form method="POST" enctype="multipart/form-data" class="add-post-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button type="submit" class="btn btn-success button-alt">Complete</button>
+                <button type="submit" class="btn btn-success button-alt">Publish</button>
                 <script>
                     let username = "{{ user.id }}";
                     document.getElementById("formAuth").value = username;

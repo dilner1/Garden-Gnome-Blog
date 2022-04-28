@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from autoslug import AutoSlugField
 
-STATUS = ((0, "Draft"), (1, "Publish"))
+STATUS = ((0, "Awaiting Approval"), (1, "Publish"))
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
