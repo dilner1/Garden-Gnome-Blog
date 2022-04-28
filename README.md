@@ -137,6 +137,8 @@ Comment form not working
 - Create a Procfile (must use a capital P) for Heroku to read
     - add web: gunicorn gardengnome.wsgi to Procfile
 
+- Recently Heroku had suspended automatic deployment so users will need to push directly from git using git push heroku main. You may have to recconet the repo to Heroku in which case go to Deploy, at the bottom will be the Deploy a GitHub branch section, input Main and press Deploy Branch.
+
 # Credits
 
 Useful websites and tutorials 
