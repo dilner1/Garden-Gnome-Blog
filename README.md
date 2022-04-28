@@ -17,26 +17,30 @@ Sign up Page: Users are able to sign up to an account with just a username, emai
 ![signup page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139362/signup_cmeotk.png "signup page image")
 
 Sign in Page: Users are able to sign into their account. There is also a link if users have forgotten their password.
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139362/signin_iulddc.png "signin page image")
+![Signin page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139362/signin_iulddc.png "signin page image")
 
 Sign out Page: Enables users to sign out, the button is a bright orange to give a visual warning users they are about to sign out. 
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139363/signout_vcxgub.png "signout page image")
+![Signout page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139363/signout_vcxgub.png "signout page image")
 
 Create Post Page: If users are signed in they will be able to create a new post, this will require some fields to be filled out such as a title (the post address is automatically generated from this). A placeholder image is provided if users don't want have an image they want to use. 
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139776/create_post_g5m4i8.png "create post page image")
+![Create post page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139776/create_post_g5m4i8.png "create post page image")
 
 Comments and likes:
-Users that are signed in are able to either like the post or leave a comment. Upon liking a post the page is refreshed, users are not able to like a post more than once. Once a comment is left the user is provided a message advising it is waiting for approval by an admin. Comments show the user, their message and how long ago it was posted, newest comments will show at the top of the comments section.
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139352/comments_likes_wmg31u.png "comments and likes image")
+Users that are signed in are able to either like the post or leave a comment. Upon liking a post the page is refreshed, users are not able to like a post more than once. Once a comment is left the user is provided a message advising it is waiting for approval by an admin. Comments show the user, their message and how long ago it was posted, newest comments will show at the top of the comments section. If users are not signed in a message will promt them to with links to both signup and registration.
+![Comments and likes section](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139352/comments_likes_wmg31u.png "comments and likes image")
 
-Update Email Page:
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139372/update_email_jymrtr.png "update email page image")
+Profile Page: Users are able to see all the posts they have created, they are also able to go to the email and password pages from here.
+![Profile page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651168624/profile_page_jdfctv.png "update email page image")
 
-Update Password Page:
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139361/password_reset_ppdvg3.png "update password page image")
 
-Delete Post Page:
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139360/delete_post_mo6br1.png "delete post page image")
+Update Email Page: Users are able to add multiple email address or remove old ones.
+![Update email page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139372/update_email_jymrtr.png "update email page image")
+
+Update Password Page: Members can reset their password or use the forgot password feature.
+![Update password page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139361/password_reset_ppdvg3.png "update password page image")
+
+Delete Post Page: Users can delete their own posts, users are brought to this page to confirm that they want to delete a post so they cannot just accidentally remove one. Only a user or admin has the option to edit or delete their own posts.
+![Delete post page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139360/delete_post_mo6br1.png "delete post page image")
 
 # Admin 
 To access admin the superusers details are
