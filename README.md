@@ -3,20 +3,37 @@ Garden Gnome
 
 ## Existing Features
 
+The Site on multiple screen sizes
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139368/responsive_design_hscdiq.png "responsive design image")
+
 Home Page
-![home page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089716/home_page_yeuxuk.png "home page image")
+includes sticky nav bar
+![home page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139372/home_page_xfp8v9.png "home page image")
 
 Sign up Page
-![signup page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089715/signup_page_vmy9hr.png "signup page image")
+![signup page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139362/signup_cmeotk.png "signup page image")
 
 Sign in Page
-![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089708/signin_page_dy2mpv.png "signin page image")
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139362/signin_iulddc.png "signin page image")
 
- Page
-![ page](" page image")
+Sign out Page
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139363/signout_vcxgub.png "signout page image")
 
- Page
-![ page](" page image")
+Create Post Page
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139776/create_post_g5m4i8.png "create post page image")
+
+Comments and likes
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139352/comments_likes_wmg31u.png "comments and likes image")
+
+Update Email Page
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139372/update_email_jymrtr.png "update email page image")
+
+Update Password Page
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139361/password_reset_ppdvg3.png "update password page image")
+
+Delete Post Page
+![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139360/delete_post_mo6br1.png "delete post page image")
+
 # Admin 
 To access admin the superusers details are
 User: admin
@@ -27,15 +44,25 @@ Password: adminaccess
 
 ## Design Stage
 
-UX
-1. Focus on the user
-2. Consistency
-3. Hierarchy
-4. Context is key
-5. Put the user in control
-6. Accessibility
-7. Usability testing
+# Database
 
+Started with basic models for the user which will be handled by Djangos all auth, the post and comments models
+
+User Test Model
+![user test model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651144441/user_test_model_eh6jvf.png "user test model image")
+
+Post Test Model
+![usposter test model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651144441/post_test_model_dxgi6e.png "post test model image")
+
+Comment Test Model
+![comment test model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651144441/comment_test_model_uhfmf1.png "comment test model image")
+
+UX
+1. Strategy
+2. Scope
+3. Structure
+4. Skeleton
+5. Surface
 
 # Testing
 
