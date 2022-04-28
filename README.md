@@ -1,37 +1,41 @@
-Garden Gnome
+# Garden Gnome
+
+
 # Features
 
 ## Existing Features
 
-The Site on multiple screen sizes
+Responsive Design:
+The Site on multiple screen sizes. Responds by limiting the amount of posts that are shown horizontally. The navigation bar also becomes a drop down menu.
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139368/responsive_design_hscdiq.png "responsive design image")
 
-Home Page
-includes sticky nav bar
+Home Page:
+The home page shows posts by all users in order of newest at the top. includes a sticky navigation bar to follow the user as they scroll. Users are able to open posts from this page even if they are not registered.
 ![home page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139372/home_page_xfp8v9.png "home page image")
 
-Sign up Page
+Sign up Page: Users are able to sign up to an account with just a username, email and password. Navigates back to the home page on completion.
 ![signup page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139362/signup_cmeotk.png "signup page image")
 
-Sign in Page
+Sign in Page: Users are able to sign into their account. There is also a link if users have forgotten their password.
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139362/signin_iulddc.png "signin page image")
 
-Sign out Page
+Sign out Page: Enables users to sign out, the button is a bright orange to give a visual warning users they are about to sign out. 
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139363/signout_vcxgub.png "signout page image")
 
-Create Post Page
+Create Post Page: If users are signed in they will be able to create a new post, this will require some fields to be filled out such as a title (the post address is automatically generated from this). A placeholder image is provided if users don't want have an image they want to use. 
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139776/create_post_g5m4i8.png "create post page image")
 
-Comments and likes
+Comments and likes:
+Users that are signed in are able to either like the post or leave a comment. Upon liking a post the page is refreshed, users are not able to like a post more than once. Once a comment is left the user is provided a message advising it is waiting for approval by an admin. Comments show the user, their message and how long ago it was posted, newest comments will show at the top of the comments section.
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139352/comments_likes_wmg31u.png "comments and likes image")
 
-Update Email Page
+Update Email Page:
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139372/update_email_jymrtr.png "update email page image")
 
-Update Password Page
+Update Password Page:
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139361/password_reset_ppdvg3.png "update password page image")
 
-Delete Post Page
+Delete Post Page:
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139360/delete_post_mo6br1.png "delete post page image")
 
 # Admin 
@@ -44,9 +48,9 @@ Password: adminaccess
 
 ## Design Stage
 
-# Database
+# Designing the Database Models
 
-Started with basic models for the user which will be handled by Djangos all auth, the post and comments models
+Started with basic models for the user which will be handled by Djangos all auth, the post and comments models. The basic needs of the site user will be to register, login, logout, create posts, like and comment on others and have a profile page to store their information. Most of this can be done with only a few models.
 
 User Test Model
 ![user test model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651144441/user_test_model_eh6jvf.png "user test model image")
@@ -58,9 +62,8 @@ Comment Test Model
 ![comment test model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651144441/comment_test_model_uhfmf1.png "comment test model image")
 
 Final Database Model
+The final model was created on dbdiagram.com
 ![final database model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651165346/database_model_qgotmw.png "final database  model image")
-
-
 
 UX
 1. Strategy
@@ -192,6 +195,6 @@ https://django-allauth.readthedocs.io/en/latest/installation.html
 pexels.com
 googlefonts.com
 fontawesome.com
-pexels.com
+dbdiagram.io
 
 ## Media
