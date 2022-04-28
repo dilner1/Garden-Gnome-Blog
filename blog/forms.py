@@ -1,8 +1,10 @@
 from django import forms
 from .models import Post, Comment
+from django_summernote.widgets import SummernoteWidget
 
 
 class PostForm(forms.ModelForm):
+    content = forms.CharField(widget=SummernoteWidget())
     class Meta:
         model = Post
         fields = ('title', 'slug', 'author', 'image', 'content', 'status')
