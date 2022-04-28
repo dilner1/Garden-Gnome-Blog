@@ -6,10 +6,10 @@ Garden Gnome
 Home Page
 ![home page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089716/home_page_yeuxuk.png "home page image")
 
-Signup Page
+Sign up Page
 ![signup page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089715/signup_page_vmy9hr.png "signup page image")
 
-Signin Page
+Sign in Page
 ![ page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651089708/signin_page_dy2mpv.png "signin page image")
 
  Page

@@ -15,7 +15,7 @@
                 {% csrf_token %}
                 {{ form|crispy }}
 
-                <button type="submit" class="btn btn-primary button-alt">Update</button>
+                <button type="submit" class="btn btn-success button-alt">Update</button>
                 <button type="button" class="btn btn-danger link-unstyled button-alt"><a
                         href="{% url 'delete_post' post.slug%}">Delete</a></button>
             </form>
