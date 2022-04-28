@@ -57,6 +57,11 @@ Post Test Model
 Comment Test Model
 ![comment test model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651144441/comment_test_model_uhfmf1.png "comment test model image")
 
+Final Database Model
+![final database model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651165346/database_model_qgotmw.png "final database  model image")
+
+
+
 UX
 1. Strategy
 2. Scope
