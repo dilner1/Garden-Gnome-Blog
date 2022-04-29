@@ -55,7 +55,38 @@ Password: passyp123
 
 ## Features Left to Implement
 
+Signup, login / logout messages
+View liked posts on profile page
+
 ## Design Stage
+
+Desktop homepage layout version one
+![Desktop homepage layout version one](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267009/design%20stage/desktop_test_layout_1_uyxva1.png "Desktop homepage layout version one image")
+
+Desktop homepage layout version two
+![Desktop homepage layout version two](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267010/design%20stage/desktop_test_layout_2_kc1yu6.png "Desktop homepage layout version two image")
+
+Desktop post page layout
+![Desktop post layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267009/design%20stage/desktop_post_layout_jwoxl8.png "Desktop homepage layout image")
+
+Desktop profile page layout
+![Desktop profile layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267008/design%20stage/profile_page_layout_cpqmy3.png "Desktop profile layout image")
+
+Desktop login layout
+![Desktop login layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267007/design%20stage/site_login_layout_q5uqgl.png "Desktop login layout image")
+
+Mobile homepage layout
+![Mobile homepage layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267011/design%20stage/mobile_homepage_layout_dozunv.png "Mobile homepage layout image")
+
+Mobile post page layout
+![Mobile post layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267401/design%20stage/mobile_post_layout_niizqt.png "Mobile post layout image")
+
+Mobile profile page layout
+![Mobile profile layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267008/design%20stage/mobile_profile_layout_mir2zl.png "Mobile profile layout image")
+
+Mobile login layout
+![Mobile login layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267009/design%20stage/mobile_login_layout_hd8vk7.png "Mobile login layout image")
+
 
 # Designing the Database Models
 
