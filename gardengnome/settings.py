@@ -9,10 +9,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['garden-gnome-blog.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['localhost', 'garden-gnome-blog.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

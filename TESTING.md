@@ -102,3 +102,78 @@ Manage Validator
 Env Validator: As with the settings file this validator is showing lines are too long when this physically cannot be avoided.
 ![env.py validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651244031/python%20validation/env_failed_py_c6robb.png "env.py validator image")
 
+## Manual Testing
+
+Manual testing was carried out on this site as oppost to automated testing.
+
+------
+
+Unauthorised Users
+
+Aim: Users that are not signed up should not be able to comment, like or create posts or be able to amend data in any way.
+
+Test: Will sign out as a user and try all the links that a signed in user has access.
+
+Outcome: Unauthorised users can access profile page but shows no posts and does not give options for changing email / password, they cannot comment or like posts. When trying to change passwords or emails using the URL the site will redirect you back to the signin page.
+
+--------
+
+Creating incomplete posts
+
+Aim: 
+
+Test:
+
+Outcome:
+
+--------
+
+Navigating the site
+
+Aim: 
+
+Test:
+
+Outcome:
+
+--------
+
+## Bugs
+
+## Development Bugs
+
+Problem: The link to the edit post page is not working, given the error: Reverse for 'edit_post' with no arguments not found.
+Source: This is suggesting an issue with linked url however it looks correct - the link in the HTML file however is causing an issue.
+Solution:  Added post:slug to end of url link in open_post.html like this {% url 'edit_post' post.slug%}
+
+Problem: on sign in user is registered but error appears: ConnectionRefusedError at /accounts/signup/
+[Errno 111] Connection refused
+Source: Error with all auth trying to send an email
+Solution: Setting dummy email backend in settings removes issue and directs user back to main page as it should
+
+Comments not showing
+Problem: Comments not showing even tho they appear in admin panel and approved
+-Source: Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead
+Solution: Changed comment count display comments count
+
+Comment form not submitting
+Problem: Comment submit button shows but no fields, pressing the submit button breaks the url. All other forms working.
+Source: Believed it first to be because of the user of crispy forms, which should not be the case. Possibly linked the form incorrectly.
+Solution: changed { form|crispy } to {comment_form|crispy} which shows shows the comment field.
+
+Heroku loading static files
+Problem: Heroku not loading css, files are referrenced correctly in HTML locally. 
+Source: Suspect Heroku interpeting the location of css files incorrectly, Stack overflow seems to suggest this also.
+Solution: Removed CollectStatic from Heroku and changed Debug from True to False.
+
+# Unfixed Bugs
+
+Navigation bar
+Problem: The navigation bar is intended to stick to the top of the page as the user scrolls. Currently it only sticks until a certain point on the page. This was not picked up earlier in development as it required quite a large numebr of posts before becoming an issue. 
+
+
+Logging in
+Problem: A user should be able to sign in so they can comment and like posts, firstly they will need to create an account so we will need to test that this function works. After setting Debug to False the Register page does not redirect correctly, previously it would direct to the home page as intended however now it instead gives a 505 error.
+
+All Auth now setting 505 errors for changing information
+505 error

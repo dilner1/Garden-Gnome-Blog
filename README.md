@@ -51,7 +51,7 @@ Delete Post Page: Users can delete their own posts, users are brought to this pa
 To access admin the superusers details are
 User: admin
 Email: admin@gmail.com
-Password: adminaccess
+Password: passyp123
 
 ## Features Left to Implement
 
@@ -82,36 +82,6 @@ UX
 5. Surface
 
 # Testing
-
-
-## Development Bugs
-- Link to Edit post breaking open_post.html - error = Reverse for 'edit_post' with no arguments not found.
-- In urls.py in this order update/<slug:slug>
-- Added post:slug to end of url link in open_post.html like this {% url 'edit_post' post.slug%}
-
-- on sign in user is registered but error appears ConnectionRefusedError at /accounts/signup/
-[Errno 111] Connection refused
-- Issue not clear but stack overflow suggests there is an error trying to send an email
-- Setting dummy email backend in settings removes issue and directs user back to main page as it should
-
-Comments not showing
-- Comments not showing even tho they appear in admin panel and approved
-- Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead
-- Changed comment count display comments count
-
-Comment form not working
-- Comment submit button shows but no fields, on submit the url breaks
-- changed { form|crispy } to {comment_form|crispy} which shows shows the comment field
-- Form now submitting correctly
-
-- Heroku not loading css, files are referrenced correctly in HTML locally. This must be an issue with heroku interpeting the location of css files
-- Most answers on Stack Overflow static files not being located properly.
-- Removed CollectStatic from Heroku and changed Debug from True to False.
-
-# Unfixed Bugs
-
-## Navigation bar
-- Sticky navbar works for only a portion of the time, after a certain distance down the page it can be scrolled out of site.
 
 # Deployment
 - Create git repository from Code institute template

@@ -1,6 +1,8 @@
 from blog import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
+from django.conf.urls import handler500
+
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
