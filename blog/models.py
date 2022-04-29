@@ -7,6 +7,7 @@ from autoslug import AutoSlugField
 
 STATUS = ((0, "Awaiting Approval"), (1, "Publish"))
 
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = AutoSlugField(
@@ -29,7 +30,6 @@ class Post(models.Model):
         related_name='blogpost_like',
         blank=True)
 
-
     class Meta:
         ordering = ['-created_on']
 
@@ -48,7 +48,8 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=100)
     email = models.EmailField()
     body = models.TextField()

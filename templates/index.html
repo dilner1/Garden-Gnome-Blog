@@ -10,7 +10,6 @@
                     <a href="{% url 'open_post' post.slug  %}" class="btn">
                         <h2>{{ post.title }}</h2>
                     </a>
-                    <p>{{ post.excerpt | safe }}</p>
                     <h5>{{ post.author }} | {{ post.created_on}}</h5>
                 </div>
                 {% if 'placeholder' in post.image.url %}
@@ -19,8 +18,8 @@
                 {% else %}
                 <img class="card-img-top img-responsive fit-image" alt="card image" src="{{ post.image.url }}">
                 {% endif %}
-
-                <p class="card-text">{{post.content | slice:":200" | safe }}</p>
+                
+                <div class="profile-posts">{{ post.content | slice:":100" | safe }}</div>
             </div>
         </div>
         {% endfor %}
