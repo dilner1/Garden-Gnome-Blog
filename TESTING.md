@@ -3,7 +3,7 @@
 
 ## Validator Testing
 
-CSS validation was passing fine initially, however after experiencing issues with Heroku loading the CSS file correctly whitenoise was implemented to correct this. Although it could be a seperate issue, since then the CSS file has thrown an error and multiple warnings. When checking via the site URL this is an issue however I have checked the CSS file by direct input.
+CSS validation was passing fine initially, however after experiencing issues with Heroku loading the CSS file correctly whitenoise was implemented to correct this. Although it could be a seperate issue, since then the CSS file has thrown an error and multiple warnings. When checking via the site URL this is an issue, however I have checked the CSS file by direct input which validates correctly.
 
 ### CSS 
 Earlier CSS validator results
@@ -24,7 +24,7 @@ An occuring issue at the end of the project was failing HTML validation for seem
 
 The p brackets are printed incorrectly above so the readme file doesn't hide them
 
-removing the p tags removed all errors however created visible p tags on the actual site for the user to see. Removing some of the elements withint the brackets removed the errors also, even stranger changing from 200 to 100 also removed the errors. Some of the issues I experienced could not be replicated afterwards which is very strange.
+Removing the p tags removed all errors, however created visible p tags on the actual site for the user to see. Removing some of the elements within the brackets removed the errors also, even stranger changing from 200 to 100 also removed the errors. Some of the issues I experienced could not be replicated afterwards, which is very strange.
 
 HTML index page validator
 ![HTML index validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1650972457/HTML_Index_Validator_lbitjw.png "HMTL index validator")
@@ -105,7 +105,7 @@ Env Validator: As with the settings file this validator is showing lines are too
 
 ### Lighthouse Results
 
-With both the mobile and desktop version of the site the accessability , best practices and SEO scores are all above 90 which is great. The performance is around 70 which is not so good, the images are all stored in Cloudinary so I believe it may be because the images were not made smaller before uploading there.
+With both the mobile and desktop version of the site the accessibility , best practices and SEO scores are all above 90 which is great. The performance is around 70 which is not so good, the images are all stored in Cloudinary so I believe it may be because the images were not made smaller before uploading there.
 
 Mobile
 ![mobile lighthouse results](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651308289/design%20stage/mobile_lighthouse_xtzgda.png "mobile lighthouse results image")
@@ -115,7 +115,7 @@ Desktop
 
 ## Manual Testing
 
-Manual testing was carried out on this site as oppost to automated testing.
+Manual testing was carried out on this site as oppost to automated testing by both myself and having other users without prior knowledge of the site to test it.
 
 ------
 
@@ -125,7 +125,7 @@ Aim: Users that are not signed up should not be able to comment, like or create 
 
 Test: Will sign out as a user and try all the links that a signed in user has access.
 
-Outcome: Unauthorised users can access profile page but shows no posts and does not give options for changing email / password, they cannot comment or like posts. When trying to change passwords or emails using the URL the site will redirect you back to the signin page. Users can access the add post page but it will not submit and so isn't an issue.
+Outcome: Unauthorised users can access profile page, but shows no posts and does not give options for changing email / password, they cannot comment or like posts. When trying to change passwords or emails using the URL the site will redirect you back to the sign in page. Users can access the add post page, but it will not submit and so isn't an issue.
 
 --------
 
@@ -133,9 +133,9 @@ Creating incomplete posts
 
 Aim: User should not be able to make posts that do not have all the information, the title also generates the slug so is necessary.
 
-Test: Trying to sumbit information without being signed in, leaving out the content and / or the title
+Test: Trying to submit information without being signed in, leaving out the content and / or the title.
 
-Outcome: Form does not sumbit and prompts users to 
+Outcome: Form does not sumbit and prompts users to fill out necessary fields.
 
 --------
 
@@ -143,9 +143,9 @@ Navigating the site
 
 Aim: Users should be able to navigate around the site easily, there should be no broken links or errors.
 
-Test: Asked users to set up an account, try to change their information via the profile page. Variety of age groups were used.
+Test: Asked users to set up an account, try to change their information via the profile page. A variety of age groups were used.
 
-Outcome: All users seemed to use the site easily, all links worked fine for myself also
+Outcome: All users seemed to use the site easily, all links worked fine for myself also.
 
 --------
 
@@ -154,17 +154,17 @@ Outcome: All users seemed to use the site easily, all links worked fine for myse
 ## Development Bugs
 
 Problem: The link to the edit post page is not working, given the error: Reverse for 'edit_post' with no arguments not found.
-Source: This is suggesting an issue with linked url however it looks correct - the link in the HTML file however is causing an issue.
+Source: This is suggesting an issue with the linked url however it looks correct - the link in the HTML file however is causing an issue.
 Solution:  Added post:slug to end of url link in open_post.html like this {% url 'edit_post' post.slug%}.
 
-Problem: on sign in user is registered but error appears: ConnectionRefusedError at /accounts/signup/
+Problem: On sign in user is registered but error appears: ConnectionRefusedError at /accounts/signup/
 [Errno 111] Connection refused.
 Source: Error with all auth trying to send an email.
 Solution: Setting dummy email backend in settings removes issue and directs user back to main page as it should.
 
 Comments not showing
 Problem: Comments not showing even tho they appear in admin panel and approved.
--Source: Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead.
+Source: Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead.
 Solution: Changed comment count display comments count.
 
 Comment form not submitting
@@ -172,8 +172,8 @@ Problem: Comment submit button shows but no fields, pressing the submit button b
 Source: Believed it first to be because of the user of crispy forms, which should not be the case. Possibly linked the form incorrectly.
 Solution: changed { form|crispy } to {comment_form|crispy} which shows shows the comment field.
 
-Heroku loading static files
-Problem: Heroku not loading css, files are referrenced correctly in HTML locally. 
+Heroku not loading static files
+Problem: Heroku not loading css, files are referrenced correctly in HTML locally.
 Source: Suspect Heroku interpeting the location of css files incorrectly, Stack overflow seems to suggest this also.
 Solution: Removed CollectStatic from Heroku and changed Debug from True to False.
 
@@ -188,4 +188,4 @@ Solution: Removing the if statement so the site allows users to register, change
 Problem: The navigation bar is intended to stick to the top of the page as the user scrolls. Currently it only sticks until a certain point on the page. This was not picked up earlier in development as it required quite a large numebr of posts before becoming an issue. 
 
 ### Javascript
-Problem: Javascript should be loaded in it's on js page rather than from script tags. The javascript in the JS file could not be loaded correctly by the add post page but it is not clear why as it seems to have been referenced correctly. For now I have removed the link, javascript has been used in a very limited capacity in this project so it will not cause an issue but for larger projects this would not be an ideal solution.
+Problem: Javascript should be loaded in it's on js page rather than from script tags. The javascript in the JS file could not be loaded correctly by the add post page, it is not clear why as it seems to have been referenced correctly. For now I have removed the link, javascript has been used in a very limited capacity in this project so it will not cause an issue but for larger projects this would not be an ideal solution.
