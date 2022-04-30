@@ -47,7 +47,7 @@ Update Password Page: Members can reset their password or use the forgot passwor
 Delete Post Page: Users can delete their own posts, users are brought to this page to confirm that they want to delete a post so they cannot just accidentally remove one. Only a user or admin has the option to edit or delete their own posts.
 ![Delete post page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139360/delete_post_mo6br1.png "delete post page image")
 
-# Admin 
+## Admin Login Information
 To access admin the superusers details are
 User: admin
 Email: admin@gmail.com
@@ -60,6 +60,7 @@ View liked posts on profile page
 
 ## Design Stage
 
+### wireframes 
 Desktop homepage layout version one
 ![Desktop homepage layout version one](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267009/design%20stage/desktop_test_layout_1_uyxva1.png "Desktop homepage layout version one image")
 
@@ -87,6 +88,65 @@ Mobile profile page layout
 Mobile login layout
 ![Mobile login layout](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651267009/design%20stage/mobile_login_layout_hd8vk7.png "Mobile login layout image")
 
+### User Stories
+
+Create base index HTML and CSS page 
+- The Site User and Site Admin is able to [view the main page] which will allow them to see the contents of the site.
+
+Connect Project to Heroku and Django
+- Before the [Site User or Site Admin] is able to [access the site] it will need to be linked with Django so other elements can be implemented and Heroku so we know the site can be deployed without issue.
+
+View Posts
+- The [Site user and Site Admin] is able to [view a list of created posts] which will allow them to [open the post to view the contents].
+
+View Post Content
+- The [Site User and Site Admin] is able to [open a post from the Home page and view the content] which will allow them to [read the post in its entirety].
+
+Create Add Post page
+- The [Site User and Site Admin] is able to [view the add post page] which will allow them to [create a post from the site once functionality is added]. This will be designed with a mobile first approach
+
+Allow Admin to approve / reject posts
+- The [Site Admin] is able to [approve or reject posts] which will allow them to [remove inappropriate content].
+
+Implement Database Model
+-  Design database model and implement into models.py file
+
+User / Admin can edit or delete post
+- The [Site user / Site Admin] is able to [edit or delete any post they have created] which will allow them to [edit any errors / update content or remove posts they no longer want to share].
+
+Allow Users to Comment on posts
+- The [Site User] is able to [leave a comment on a post] which will allow them to [engage with the post and other users].
+
+Allow Admin to Approve / Disapprove Comments
+- The [Site Admin] is able to [approve or disapprove comments] which will allow them to [filter out inappropriate comments].
+
+View Post Comments
+- The [Site user] is able to [view approved comments on a post] which will allow them to [read other user opinions on the topic].
+
+Allow Users to Create Account
+- The [Site User] is able to [create an account] which will allow them to [like and comment on posts].
+
+Allow Users to like posts
+- The [Site user] is able to [like a post] which will allow them to [show their interest in a post].
+
+View Post Likes
+- The [Site User and Site Admin] is able to [view how many likes a post has] which will allow them to [quickly see the popularity of a post].
+
+View Post Likes
+- The [Site User and Site Admin] is able to [view how many likes a post has] which will allow them to [quickly see the popularity of a post].
+
+Upscale Pages to Desktop
+- The [Site User and Site Admin] is able to [view the desktop layout for each page] which will provide them with [a better desktop experience].
+
+Create profile Page
+- The [Site User and Site Admin] is able to [view the profile page] which will allow them to [view their created and liked posts once functionality is added]. This will be designed with a mobile first approach.
+
+UX
+1. Strategy
+2. Scope
+3. Structure
+4. Skeleton
+5. Surface
 
 # Designing the Database Models
 
@@ -105,14 +165,9 @@ Final Database Model
 The final model was created on dbdiagram.com
 ![final database model](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651165346/database_model_qgotmw.png "final database  model image")
 
-UX
-1. Strategy
-2. Scope
-3. Structure
-4. Skeleton
-5. Surface
-
 # Testing
+
+[Testing section is located here](https://github.com/dilner1/Garden_Gnome_Blog/blob/main/TESTING.md)
 
 # Deployment
 - Create git repository from Code institute template
@@ -169,19 +224,19 @@ UX
 
 # Credits
 
-Useful websites and tutorials 
-https://djangocentral.com/building-a-blog-application-with-django/
-https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&ab_channel=Codemy.com
-https://www.samuelliedtke.com/blog/implement-comment-system-blog-application-django/#views
-https://vegibit.com/slug-based-routing-in-django/
+Useful websites and tutorials:
+- https://djangocentral.com/building-a-blog-application-with-django/
+- https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&ab_channel=Codemy.com
+- https://www.samuelliedtke.com/blog/implement-comment-system-blog-application-django/#views
+- https://vegibit.com/slug-based-routing-in-django/
 
-Bootstrap 
-https://www.youtube.com/watch?v=qNifU_aQRio&ab_channel=AdrianTwarog
-https://getbootstrap.com/docs/5.0/examples/pricing/
-https://getbootstrap.com/
+Bootstrap:
+- https://www.youtube.com/watch?v=qNifU_aQRio&ab_channel=AdrianTwarog
+- https://getbootstrap.com/docs/5.0/examples/pricing/
+- https://getbootstrap.com/
 
-Django All Auth
-https://django-allauth.readthedocs.io/en/latest/installation.html
+Django All Auth:
+- https://django-allauth.readthedocs.io/en/latest/installation.html
 
 ## Content
 

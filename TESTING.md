@@ -1,4 +1,5 @@
 # Testing
+[Go back to README](/README.md)
 
 ## Validator Testing
 
@@ -173,7 +174,7 @@ Problem: The navigation bar is intended to stick to the top of the page as the u
 
 
 Logging in
-Problem: A user should be able to sign in so they can comment and like posts, firstly they will need to create an account so we will need to test that this function works. After setting Debug to False the Register page does not redirect correctly, previously it would direct to the home page as intended however now it instead gives a 505 error.
+Problem: A user should be able to sign in so they can comment and like posts, they also need the functionality to change their email and password information. After setting Debug to False the all auth pages for registering, changing emails, passwords and  do not redirect correctly, previously it would direct to the home page as intended however now it instead gives a 505 error.
 
 All Auth now setting 505 errors for changing information
 505 error
