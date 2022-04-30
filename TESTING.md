@@ -103,6 +103,16 @@ Manage Validator
 Env Validator: As with the settings file this validator is showing lines are too long when this physically cannot be avoided.
 ![env.py validator](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651244031/python%20validation/env_failed_py_c6robb.png "env.py validator image")
 
+### Lighthouse Results
+
+With both the mobile and desktop version of the site the accessability , best practices and SEO scores are all above 90 which is great. The performance is around 70 which is not so good, the images are all stored in Cloudinary so I believe it may be because the images were not made smaller before uploading there.
+
+Mobile
+![mobile lighthouse results](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651308289/design%20stage/mobile_lighthouse_xtzgda.png "mobile lighthouse results image")
+
+Desktop
+![desktop lighthouse results](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651308289/design%20stage/desktop_lighthouse_pfz99w.png "desktop lighthouse results image")
+
 ## Manual Testing
 
 Manual testing was carried out on this site as oppost to automated testing.
