@@ -131,7 +131,7 @@ Outcome:
 
 Navigating the site
 
-Aim: 
+Aim: Users should be able to navigate around the site easily, there should be no broken links or errors.
 
 Test:
 
@@ -145,17 +145,17 @@ Outcome:
 
 Problem: The link to the edit post page is not working, given the error: Reverse for 'edit_post' with no arguments not found.
 Source: This is suggesting an issue with linked url however it looks correct - the link in the HTML file however is causing an issue.
-Solution:  Added post:slug to end of url link in open_post.html like this {% url 'edit_post' post.slug%}
+Solution:  Added post:slug to end of url link in open_post.html like this {% url 'edit_post' post.slug%}.
 
 Problem: on sign in user is registered but error appears: ConnectionRefusedError at /accounts/signup/
-[Errno 111] Connection refused
-Source: Error with all auth trying to send an email
-Solution: Setting dummy email backend in settings removes issue and directs user back to main page as it should
+[Errno 111] Connection refused.
+Source: Error with all auth trying to send an email.
+Solution: Setting dummy email backend in settings removes issue and directs user back to main page as it should.
 
 Comments not showing
-Problem: Comments not showing even tho they appear in admin panel and approved
--Source: Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead
-Solution: Changed comment count display comments count
+Problem: Comments not showing even tho they appear in admin panel and approved.
+-Source: Removed {% if not comment in comments %}, realised should have used {% if comments.count == 0 %} instead.
+Solution: Changed comment count display comments count.
 
 Comment form not submitting
 Problem: Comment submit button shows but no fields, pressing the submit button breaks the url. All other forms working.
@@ -167,27 +167,12 @@ Problem: Heroku not loading css, files are referrenced correctly in HTML locally
 Source: Suspect Heroku interpeting the location of css files incorrectly, Stack overflow seems to suggest this also.
 Solution: Removed CollectStatic from Heroku and changed Debug from True to False.
 
+Allauth links after Debug False
+Problem: After setting Debug to False the all auth pages for registering, changing emails, passwords and  do not redirect correctly, previously it would direct to the home page as intended however now it instead gives a 505 error.
+Source: EMAIL_BACKEND was set only when DEBUG is True.
+Solution: Removing the if statement so the site allows users to register, change emails and passwords as they should.
+
 # Unfixed Bugs
 
 Navigation bar
 Problem: The navigation bar is intended to stick to the top of the page as the user scrolls. Currently it only sticks until a certain point on the page. This was not picked up earlier in development as it required quite a large numebr of posts before becoming an issue. 
-
-
-Logging in
-Problem: A user should be able to sign in so they can comment and like posts, they also need the functionality to change their email and password information. After setting Debug to False the all auth pages for registering, changing emails, passwords and  do not redirect correctly, previously it would direct to the home page as intended however now it instead gives a 505 error.
-
-All Auth now setting 505 errors for changing information
-505 error
-
-Erros seems to point to a collect static error - in Heroku build logs you can see the following line:
-
-$ python manage.py collectstatic --noinput
-       0 static files copied, 247 post-processed.
-
-Stack overflow also suggests this is the answer as well as the ALLOWED_HOSTS in settings.py
-
-When looking through settings.py I noticed this line:
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-
-So no email backed is set up when DEBUG is false, aded an else statement with the same code which seems to have fixed the issue.

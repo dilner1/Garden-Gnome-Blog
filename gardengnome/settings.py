@@ -46,11 +46,7 @@ ACCOUNT_FORMS = {
     'disconnect': 'allauth.socialaccount.forms.DisconnectForm',
 }
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
