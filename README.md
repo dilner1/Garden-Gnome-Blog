@@ -45,12 +45,6 @@ Update Password Page: Members can reset their password or use the forgot passwor
 Delete Post Page: Users can delete their own posts, users are brought to this page to confirm that they want to delete a post so they cannot just accidentally remove one. Only a user or admin has the option to edit or delete their own posts.
 ![Delete post page](https://res.cloudinary.com/ddxxrzq7g/image/upload/v1651139360/delete_post_mo6br1.png "delete post page image")
 
-## Admin Login Information
-To access admin the superusers details are
-User: admin
-Email: admin@gmail.com
-Password: passyp123
-
 ## Features Left to Implement
 
 Sigup, login / logout messages: Users are either redirected to the home page currently or the page they are using refreshes without a success message. I would be a better user experience for the user to get feedback about the action they just completed.
