@@ -178,3 +178,16 @@ Problem: A user should be able to sign in so they can comment and like posts, th
 
 All Auth now setting 505 errors for changing information
 505 error
+
+Erros seems to point to a collect static error - in Heroku build logs you can see the following line:
+
+$ python manage.py collectstatic --noinput
+       0 static files copied, 247 post-processed.
+
+Stack overflow also suggests this is the answer as well as the ALLOWED_HOSTS in settings.py
+
+When looking through settings.py I noticed this line:
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
+So no email backed is set up when DEBUG is false, aded an else statement with the same code which seems to have fixed the issue.

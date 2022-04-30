@@ -2,9 +2,7 @@
 
 Garden Gnome is a blog site designed for adults and teenagers with an interest in horticulture, the purpose is to allow users from anywhere in the world to communicate about this shared passion. Whether it is so they can present flowers to a loved one, they've just planted their first terrarium or have just started growing vegetables in the back garden, users are be able to share their pictures, stories and interact with other users posts via comments and likes.
 
-With horticulture being enjoyed by any age groups the site should be focused on clear structure, simplicity of use and accessability. 
-
-Garden Gnome was built in the Django framework using Python, Javascript HTML and CSS. Other technologies include hosting to Heroku, a cloud platform service and Cloudinary, a cloud based storage site.
+With horticulture being enjoyed by any age group the site should be focused on clear structure, navigation, simplicity of use and accessability. 
 
 # Features
 
@@ -237,6 +235,42 @@ Bootstrap:
 
 Django All Auth:
 - https://django-allauth.readthedocs.io/en/latest/installation.html
+
+## Technologies Used
+
+### Languages
+HTML
+CSS
+Python
+Javascript
+
+### Frameworks
+Django
+Bootstrap
+
+### Hosting
+Heroku
+Cloudinary
+
+### Downloaded Requirements
+asgiref==3.5.0
+cloudinary==1.29.0
+dj-database-url==0.5.0
+dj3-cloudinary-storage==0.0.6
+Django==3.2
+django-allauth==0.49.0
+django-autoslug==1.9.8
+django-crispy-forms==1.14.0
+django-summernote==0.8.20.0
+gunicorn==20.1.0
+oauthlib==3.2.0
+psycopg2==2.9.3
+PyJWT==2.3.0
+python3-openid==3.2.0
+pytz==2021.3
+requests-oauthlib==1.3.1
+sqlparse==0.4.2
+whitenoise==6.0.0
 
 ## Content
 

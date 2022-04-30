@@ -48,6 +48,9 @@ ACCOUNT_FORMS = {
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
