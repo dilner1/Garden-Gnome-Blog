@@ -115,17 +115,17 @@ Aim: Users that are not signed up should not be able to comment, like or create 
 
 Test: Will sign out as a user and try all the links that a signed in user has access.
 
-Outcome: Unauthorised users can access profile page but shows no posts and does not give options for changing email / password, they cannot comment or like posts. When trying to change passwords or emails using the URL the site will redirect you back to the signin page.
+Outcome: Unauthorised users can access profile page but shows no posts and does not give options for changing email / password, they cannot comment or like posts. When trying to change passwords or emails using the URL the site will redirect you back to the signin page. Users can access the add post page but it will not submit and so isn't an issue.
 
 --------
 
 Creating incomplete posts
 
-Aim: 
+Aim: User should not be able to make posts that do not have all the information, the title also generates the slug so is necessary.
 
-Test:
+Test: Trying to sumbit information without being signed in, leaving out the content and / or the title
 
-Outcome:
+Outcome: Form does not sumbit and prompts users to 
 
 --------
 
@@ -174,5 +174,8 @@ Solution: Removing the if statement so the site allows users to register, change
 
 # Unfixed Bugs
 
-Navigation bar
+### Navigation bar
 Problem: The navigation bar is intended to stick to the top of the page as the user scrolls. Currently it only sticks until a certain point on the page. This was not picked up earlier in development as it required quite a large numebr of posts before becoming an issue. 
+
+### Javascript
+Problem: Javascript should be loaded in it's on js page rather than from script tags. The javascript in the JS file could not be loaded correctly by the add post page but it is not clear why as it seems to have been referenced correctly. For now I have removed the link, javascript has been used in a very limited capacity in this project so it will not cause an issue but for larger projects this would not be an ideal solution.
