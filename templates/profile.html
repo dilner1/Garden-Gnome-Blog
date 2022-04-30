@@ -6,8 +6,9 @@
 
 <nav class="navbar-expand navbar-light">
   <div class="container-fluid">
+    <h2 class="text-center button-alt">{{ user.username }}</h2>
+    {% if user.is_authenticated %}
     <ul class="navbar navbar-nav justify-content-center">
-      {% if user.is_authenticated %}
       <li class="nav-item">
         <a href="{% url 'account_email' %}" class="nav-link text-center">Change my Email</a>
       </li>

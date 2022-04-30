@@ -133,9 +133,9 @@ Navigating the site
 
 Aim: Users should be able to navigate around the site easily, there should be no broken links or errors.
 
-Test:
+Test: Asked users to set up an account, try to change their information via the profile page. Variety of age groups were used.
 
-Outcome:
+Outcome: All users seemed to use the site easily, all links worked fine for myself also
 
 --------
 
