@@ -79,21 +79,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gardengnome.wsgi.application'
 
-# if os.environ.get("DATABASE_URL"):
-#     DATABASES = {
-#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ))
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-#         }
-#     }
+if os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
 
-DATABASES = {
-   'default': dj_database_url.parse('postgres://iizikdpfvlngly:0e24ed5480c9de96395feae628949ec8d8fc8ed6aa553300fdabafef7705f47c@ec2-176-34-215-248.eu-west-1.compute.amazonaws.com:5432/d832l21ff15643')
-}
+# DATABASES = {
+#    'default': dj_database_url.parse('postgres://naeqhqcjxgofxy:be9995d0531ecc0c5218f83c7d8bc894f39a054e4993d5a0ed5acb7f0cc5168f@ec2-54-228-97-176.eu-west-1.compute.amazonaws.com:5432/d1elh9tr3gflbl')
+# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
